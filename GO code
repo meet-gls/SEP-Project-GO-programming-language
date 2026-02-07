@@ -1,0 +1,45 @@
+package main
+
+import "fmt"
+
+func main() {
+	var choice int
+	var value float64
+
+	fmt.Println("=== UNIT CONVERTER ===")
+	fmt.Println("1. Meters to Kilometers")
+	fmt.Println("2. Kilometers to Meters")
+	fmt.Println("3. Celsius to Fahrenheit")
+	fmt.Println("4. Fahrenheit to Celsius")
+	fmt.Println("5. Meters to Feet")
+	fmt.Println("6. Feet to Meters")
+
+	fmt.Print("Enter your choice: ")
+	fmt.Scan(&choice)
+
+	fmt.Print("Enter value: ")
+	fmt.Scan(&value)
+
+	switch choice {
+	case 1:
+		fmt.Printf("Result: %.2f km\n", value/1000)
+
+	case 2:
+		fmt.Printf("Result: %.2f m\n", value*1000)
+
+	case 3:
+		fmt.Printf("Result: %.2f °F\n", (value*9/5)+32)
+
+	case 4:
+		fmt.Printf("Result: %.2f °C\n", (value-32)*5/9)
+
+	case 5:
+		fmt.Printf("Result: %.2f ft\n", value*3.28084)
+
+	case 6:
+		fmt.Printf("Result: %.2f m\n", value/3.28084)
+
+	default:
+		fmt.Println("Invalid choice")
+	}
+}
